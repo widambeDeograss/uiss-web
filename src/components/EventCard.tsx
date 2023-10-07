@@ -18,7 +18,7 @@ import {
 
   export function EventCard(data:data) {
     return (
-      <Card className="max-w-[24rem] overflow-hidden">
+      <Card className="max-w-[24rem] overflow-hidden bg-black border-[0.3px]" >
         <CardHeader
           floated={false}
           shadow={false}
@@ -31,22 +31,22 @@ import {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h4" color="blue-gray">
+          <Typography variant="h4" color="white">
             {data.title}
           </Typography>
-          <Typography variant="lead" color="gray" className="mt-3 font-normal">
+          <Typography variant="lead" color="white" className="mt-3 font-normal">
             Because it&apos;s about motivating the doers. Because I&apos;m here to
             follow my dreams and inspire others.
           </Typography>
-          <Typography variant="h6" color="blue-gray" className="mt-3">
+          <Typography variant="h6" color="white" className="mt-3">
             Date: {data.date}
           </Typography>
-          <Typography variant="h6" color="blue-gray">
+          <Typography variant="h6" color="white">
            Location: {data.location}
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-        <Button>Read More</Button>
+        <Button className="bg-[#FABD13] text-black">Register</Button>
       </CardFooter>
       </Card>
     );

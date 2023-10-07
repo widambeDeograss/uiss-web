@@ -12,6 +12,9 @@ import godrey from "../assets/img/logo-godrej.png";
 import valuesImages from "../assets/img/computer 1.png"
 import CoreValuesCard from "../components/CoreValuesCard";
 import eventImage from "../assets/img/evntImage.png"
+import { EventCard } from "../components/EventCard";
+import stem from "../assets/img/stem.png";
+import carrier from "../assets/img/carrier.png"
 
 const VALUES = [
     {
@@ -45,17 +48,16 @@ const EVENTS = [
     },
     {
         id:2,
-     title:"Encoded data",
-     image:eventImage,
+     title:"Career Guidance",
+     image:carrier,
      description:"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
      location:"20th March 2023",
      date:"COICT,Sayansi"
-
     },
     {
         id:3,
-     title:"Encoded data",
-     image:eventImage,
+     title:"Stem training",
+     image:stem,
      description:"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
      location:"20th March 2023",
      date:"COICT,Sayansi"
@@ -191,6 +193,29 @@ function Home() {
        {VALUES.map((item) => {
             return(
                 <CoreValuesCard description={item.description} image={item.image} title={item.title} id={item.id}/>
+            )
+        })}
+       </div>
+        </div>
+        <div className="mt-24">
+        <Typography
+          variant="small"
+          className="flex justify-center mb-10 font-bold  text-4xl text-white"
+        >
+          Events
+        </Typography>
+        <Typography
+          variant="small"
+          className="flex justify-center mb-10 font-bold  text-xl text-[#FABD13]"
+        >
+          We aspire Creativity and innovative spirits among 
+          the university students
+        </Typography>
+       <div className="flex justify-center gap-14 ">
+       {EVENTS.map((item) => {
+            return(
+                <EventCard description={item.description} image={item.image}
+                 title={item.title} id={item.id} location={item.location} date={item.date}/>
             )
         })}
        </div>
