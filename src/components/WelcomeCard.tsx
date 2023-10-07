@@ -10,11 +10,11 @@ import overlay from "../assets/img/Rectangle 5.png"
 
 const WelcomeCard = () => {
   return (
-    <Card className="w-full max-w-[78rem] flex-row rounded-none p-8">
+    <Card className="w-full max-w-[78rem]  lg:flex-row md:flex-row sm:flex:col rounded-none p-4 lg:p-8">
       <CardHeader
         shadow={false}
         floated={true}
-        className="m-0 w-2/5 shrink-0 rounded-none"
+        className="m-0 lg:w-2/5  lg:h-full md:h-full h-2/5 shrink-0 rounded-none"
       >
          <div className="absolute inset-0 h-full ">
          <img
@@ -26,18 +26,18 @@ const WelcomeCard = () => {
         <img
           src={wlcmpic}
           alt="card-image"
-          className="h-full w-full object-cover"
+          className="h-[500px] w-full object-cover"
         />
       </CardHeader>
-      <CardBody className="border-4 p-10 ">
+      <CardBody className="border-4 p-5 lg:p-10 ">
         <Typography
           variant="h4"
           color="blue-gray"
-          className="mb-3 bg-[#FABD13] p-2 rounded-xl text-2xl font-bold "
+          className="mb-3 bg-[#FABD13] p-1 lg:p-2 rounded-xl text-lg lg:text-2xl font-bold "
         >
           Welcome note from our advisor
         </Typography>
-        <Typography color="gray" className="mb-8 font-normal text-left text-3xl">
+        <Typography color="gray" className="mb-8 font-normal text-left text-base lg:text-3xl">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 15 00s, when an unknown printer took a galley of type and

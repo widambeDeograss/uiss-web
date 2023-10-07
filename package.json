@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.2",
+    "@splidejs/react-splide": "^0.7.12",
     "autoprefixer": "^9.8.6",
     "fontsource-roboto": "^4.0.0",
     "postcss": "^8.4.31",
