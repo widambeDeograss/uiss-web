@@ -9,8 +9,8 @@ function CoreValuesCard(data:values) {
     <div key={data.id}>
     <div className=" w-80 h-96 p-4 relative rounded-md overflow-hidden shadow-md ">
       <div className="absolute bottom-16 left-0 border-b-0  bg-[#FABD13]  border-solid w-72 h-80"></div>
-      <div className="relative z-10 text-black bg-white w-72 h-80 p-5  ">
-         <div className="bg-[#FABD13] p-1 w-24 rounded-lg flex justify-center mx-auto mb-1">
+      <div className="relative z-10 text-black bg-white w-72 h-80 p-5 hover:scale-105 transition-transform duration-300  ">
+         <div className="bg-[#FABD13] p-1 w-24 rounded-lg flex justify-center mx-auto mb-1 ">
          <img
           src={data.image}
           alt="card-image"

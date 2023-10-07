@@ -29,12 +29,12 @@ export function Header() {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 font-roboto text-white">
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:items-center lg:gap-6 font-roboto text-white bg-black p-8">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal text-lg"
+        className="p-1 font-normal text-lg hover:bg-yellow-100 "
       >
         <a href="#" className="flex items-center text-white">
           HOME
@@ -44,7 +44,7 @@ export function Header() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal text-lg"
+        className="p-1 font-normal text-lg hover:bg-yellow-100 "
       >
         <a href="#" className="flex items-center text-white">
         ABOUT
@@ -54,7 +54,7 @@ export function Header() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal text-lg"
+        className="p-1 font-normal text-lg hover:bg-yellow-100 "
       >
         <a href="#" className="flex items-center text-white">
           PROJECTS
@@ -64,7 +64,7 @@ export function Header() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal text-lg"
+        className="p-1 font-normal text-lg hover:bg-yellow-100 "
       >
         <a href="#" className="flex items-center text-white">
           EVENTS
@@ -74,8 +74,8 @@ export function Header() {
   );
 
   return (
-    <div className=" bg-black ">
-      <Navbar className="sticky top-0 z-10 h-44 max-w-full rounded-none border-0 py-2 px-4 lg:px-8 lg:py-4 bg-black">
+    <div className=" bg-black flex justify-center ">
+      <Navbar className="sticky  top-0 z-10 h-32  rounded-none border-0 py-4 px-8 lg:h-44 lg:px-8 lg:py-4 bg-black">
         <div className="flex items-center justify-center  font-roboto text-white ">
           {navState && (
             <div className="flex items-center gap-8 ">
@@ -102,7 +102,7 @@ export function Header() {
             </div>
           )}
           <img
-            className="h-40 w-72 object-cover object-center"
+            className="h-20 w-44 object-cover object-center lg:h-40 lg:w-72 "
             src={logo}
             alt="logo image"
           />
@@ -170,7 +170,7 @@ export function Header() {
           </IconButton>
         </div>
 
-        <MobileNav open={openNav}>{navList}</MobileNav>
+        <MobileNav open={openNav} >{navList}</MobileNav>
       </Navbar>
    
     </div>
