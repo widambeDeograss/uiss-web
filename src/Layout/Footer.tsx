@@ -150,7 +150,7 @@ const Footer = () => {
               </Typography>
               <Typography
                 as="a"
-                href="#"
+                href="https://tz.linkedin.com/company/uiss-udsm-ict-student-s-society"
                 className="opacity-80 transition-opacity hover:opacity-100 text-blue-300"
               >
                 <svg
