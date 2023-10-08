@@ -118,7 +118,7 @@ const Footer = () => {
               </Typography>
               <Typography
                 as="a"
-                href="#"
+                href="https://www.instagram.com/udsmict/"
                 className="opacity-80 transition-opacity hover:opacity-100 text-red-300"
               >
                 <svg
