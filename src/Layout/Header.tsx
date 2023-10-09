@@ -6,10 +6,12 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import logo from "../assets/img/UISS LOGO_VR 1.png";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
   const [openNav, setOpenNav] = React.useState(false);
   const [navState, setnavState] = React.useState(true);
+  const navigate = useNavigate()
 
   React.useEffect(() => {
     window.addEventListener(
@@ -45,6 +47,8 @@ export function Header() {
         variant="small"
         color="blue-gray"
         className="p-1 font-normal text-lg hover:bg-yellow-100 "
+
+        onClick={() =>  navigate("/about")}
       >
         <a href="#" className="flex items-center text-white">
         ABOUT
@@ -94,6 +98,7 @@ export function Header() {
                 variant="small"
                 color="blue-gray"
                 className="p-1 font-normal  text-2xl"
+                onClick={() =>  navigate("/about")}
               >
                 <a href="#" className="flex items-center text-white">
                   ABOUT
@@ -172,7 +177,7 @@ export function Header() {
 
         <MobileNav open={openNav} >{navList}</MobileNav>
       </Navbar>
-   
+
     </div>
   );
 }
