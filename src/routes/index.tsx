@@ -3,6 +3,7 @@ import Layout from '../Layout';
 import Home from '../pages/Home';
 import Registration from '../pages/Registration';
 import About from '../pages/About';
+import Projects from '../pages/Projects';
 
 
 const AppRouter = () => {
@@ -17,6 +18,7 @@ const AppRouter = () => {
                 {path:"", element:<Home />},
                 {path:"register", element:<Registration />},
                 {path:"about", element:<About />},
+                {path:"projects", element:<Projects />},
             ],
         }
     ]);

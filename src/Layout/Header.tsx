@@ -59,6 +59,7 @@ export function Header() {
         variant="small"
         color="blue-gray"
         className="p-1 font-normal text-lg hover:bg-yellow-100 "
+        onClick={() =>  navigate("/projects")}
       >
         <a href="#" className="flex items-center text-white">
           PROJECTS
@@ -128,6 +129,7 @@ export function Header() {
                 variant="small"
                 color="blue-gray"
                 className="p-1 font-normal"
+                onClick={() =>  navigate("/projects")}
               >
                 <a href="#" className="flex items-center text-white  text-2xl">
                   PROJECTS

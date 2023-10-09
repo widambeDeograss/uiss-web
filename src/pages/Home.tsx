@@ -127,7 +127,7 @@ function Home() {
           className="h-[1000px] w-full object-cover"
         />
       </div>
-      <div className=" -mt-56 h-auto  w-full flex justify-center ">
+      <div className=" -mt-40 h-auto  w-full flex justify-center ">
         <WelcomeCard />
       </div>
       <div className="mt-20 px-5 lg:p-10">
@@ -137,7 +137,7 @@ function Home() {
         >
           Our Partners
         </Typography>
-        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center text-blue-gray-900">
+        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6  text-blue-gray-900">
           <Typography
             as="a"
             href="#"
@@ -271,7 +271,7 @@ function Home() {
     <br />
     the university students
   </Typography>
- <div className="mt-20 px-10">
+ <div className="mt-20 px-10 mx-auto">
  <Testimonial />
  </div>
 </div>
