@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Registration from '../pages/Registration';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
+import Events from '../pages/Events';
 
 
 const AppRouter = () => {
@@ -19,6 +20,7 @@ const AppRouter = () => {
                 {path:"register", element:<Registration />},
                 {path:"about", element:<About />},
                 {path:"projects", element:<Projects />},
+                {path:"events", element:<Events />},
             ],
         }
     ]);

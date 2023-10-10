@@ -1,3 +1,4 @@
+import React from "react";
 import projectOverlay from "../assets/img/projectoverlay.png";
 import homeprj from "../assets/img/projecthome.png";
 import {
@@ -13,6 +14,10 @@ import eventImage from "../assets/img/evntImage.png";
 import carrier from "../assets/img/carrier.png";
 import stem from "../assets/img/stem.png";
 import ProjectCard from "../components/ProjectCard";
+import {
+    MagnifyingGlassIcon,
+
+  } from "@heroicons/react/24/solid";
 
 const EVENTS = [
   {
@@ -94,13 +99,13 @@ const Projects = () => {
         <img
           src={homeprj}
           alt="image 1"
-          className="h-full w-full object-cover"
+          className="h-[400px] w-full object-cover"
         />
-        <div className="absolute inset-0  h-full w-full">
+        <div className="absolute inset-0 -top-64 h-full w-full">
           <img src={projectOverlay} alt="image 1" className="h-full w-full " />
         </div>
         <div className="absolute inset-0 flex flex-col justify-center items-center">
-          <div className="w-4/5 md:w-2/4 text-center -mt-64">
+          <div className="w-4/5 md:w-2/4 text-center -mt-[400px]">
             <Typography
               variant="h1"
               color="white"
@@ -108,23 +113,24 @@ const Projects = () => {
             >
               Projects
             </Typography>
-          </div>
-        </div>
-        <div className="relative -mt-48 flex justify-center">
-          <div className="absolute inset-0 -mt-[110px] mx-auto w-full md:w-[600px] lg:w-[1000px] flex justify-center">
             <Typography
               variant="h1"
               color="white"
-              className="  text-sm px-10 md:text-ls lg:text-xl   "
+              className="mt-10 text-sm px-10 md:text-ls lg:text-xl   "
             >
               We aspire Creativity and Innovative Spirits among the University
               students
             </Typography>
           </div>
         </div>
+        {/* <div className="relative flex justify-center">
+          <div className="absolute inset-0  mx-auto w-full md:w-[600px] lg:w-[1000px] flex justify-center">
+          
+          </div>
+        </div> */}
       </div>
-      <div className="bg-[#C89300] px-20 py-10  w-full">
-        <div className="">
+      <div className="bg-[#C89300]  px-20 py-10 -mt-72 -z-10   w-full">
+        <div className=" ">
           <Typography
             variant="small"
             className=" mb-10 font-bold text-4xl text-black "
@@ -145,7 +151,7 @@ const Projects = () => {
                <div className="flex justify-between">
                <TabsHeader className="w-96" > 
                 {data.map(({ label, value }) => (
-                  <Tab key={value} value={value} activeClassName=" text-white bg-black" className="">
+                  <Tab key={value} value={value} activeClassName="" className="">
                     {label}
                   </Tab>
                 ))}
@@ -153,14 +159,17 @@ const Projects = () => {
               <div className="w-72  ">
               <Input
                 label="Search.."
-                icon={<i className="fas fa-heart" />}
+                icon={ <div className="flex items-center gap-2">
+                {React.createElement(MagnifyingGlassIcon, { className: "w-5 h-5" })}
+                
+              </div>}
                 crossOrigin={undefined}
               />
             </div>
                </div>
               <TabsBody>
                 {data.map(({ value, desc }) => (
-                  value === "all"?<TabPanel  value={value}>
+                  value === "all"?<TabPanel  value={value} >
                     <div className="flex flex-wrap items-center justify-center gap-10 lg:flex-row lg:justify-center md:flex-wrap sm:flex-col">
               {EVENTS.map((item) => {
                 return (

@@ -18,7 +18,7 @@ import {
 
   export function EventCard(data:data) {
     return (
-      <Card className="max-w-[24rem] overflow-hidden bg-black border-[0.3px] transform hover:rotate-3 transition-transform duration-300" >
+      <Card className="max-w-[24rem] overflow-hidden bg-black border-[0.3px] transform hover:rotate-1 transition-transform duration-300" >
         <CardHeader
           floated={false}
           shadow={false}
