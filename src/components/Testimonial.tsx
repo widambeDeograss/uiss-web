@@ -14,11 +14,42 @@ interface TestimonialItem {
   id: number;
   name: string;
   message: string;
-  title: String;
+  title: string;
 }
 
- 
- 
+const testimonials: TestimonialItem[] = [
+  {
+    id: 1,
+    name: "~Kedyson Zacharia",
+    title: " DELOITTE",
+    message:
+        "UISS is a home for creativity and innovation. Being a homie, I was able to fully utilize my potentials by leading other passionate colleagues, collaborating impacting the society, and even creating a much more favourable environment for others to learn, creatr and innovate. In fact, UISS connects people, Students, stakeholders, and technology practitioners together.",
+  },
+  {
+    id: 2,
+    name: "~Dr Baraka Maiseli",
+    title: " HEAD OF DEPARTMENT,ETE",
+    message:
+        " UISS has generated competent students capable of delivering ICT solutions to address practical socio-economic challenges that grab national attention.",
+  },
+  {
+    id: 3,
+    name: "~Ms Angela Mwemezi ",
+    title: " KPMG",
+    message:
+        "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+  },
+  {
+    id: 4,
+    name: "Alice Johnson",
+    title: " DELOITTE",
+    message:
+        "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+  },
+  // Add more testimonials as needed
+];
+
+
   function Testimonial() {
    const [slidePerpage, setslidePerpage] = useState(3);
 
@@ -31,7 +62,7 @@ interface TestimonialItem {
       }
     });
   }, []);
-      
+
     return (
       <Swiper
       // install Swiper modules
@@ -56,7 +87,7 @@ interface TestimonialItem {
     </Swiper>
     );
   }
-  
-  
+
+
   export default Testimonial;
-  
+
