@@ -11,39 +11,11 @@ import 'swiper/css/scrollbar';
 
 
 interface TestimonialItem {
-    id: number;
-    name: string;
-    message: string;
-    title:String;
-  }
-  
-  const testimonials: TestimonialItem[] = [
-    {
-      id: 1,
-      name: '~Kedyson Zacharia',
-      title: ' DELOITTE',
-      message: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-    },
-    {
-      id: 2,
-      name: '~Dr Baraka Maiseli',
-      title: ' HEAD OF DEPARTMENT,ETE',
-      message: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-    },
-    {
-      id: 3,
-      name: '~Ms Angela Mwemezi ',
-      title: ' KPMG',
-      message: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-    },
-    {
-      id: 4,
-      name: 'Alice Johnson',
-      title: ' DELOITTE',
-      message: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-    },
-    // Add more testimonials as needed
-  ];
+  id: number;
+  name: string;
+  message: string;
+  title: String;
+}
 
  
  
