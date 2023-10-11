@@ -1,8 +1,9 @@
 import "@splidejs/splide/dist/css/splide.min.css";
 import { useState } from "react";
-import right from "../assets/img/right 2.png";
-import left from "../assets/img/right 3.png";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+// import right from "../assets/img/right 2.png";
+// import left from "../assets/img/right 3.png";
+// @ts-ignore
+import { Splide, SplideSlide } from "@splidejs/react-splide"; 
 import "@splidejs/splide/dist/css/themes/splide-default.min.css"; // Import Splide styles
 
 interface TestimonialItem {
@@ -45,18 +46,19 @@ const testimonials: TestimonialItem[] = [
 ];
 
 function Testimonial() {
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  // @ts-ignore
+  const [currentSlide, setCurrentSlide] = useState<number>(0)
 
-  const slidesPerPage = {
-    lg: 3,
-    md: 2,
-    sm: 1,
-  };
+  // const slidesPerPage = {
+  //   lg: 3,
+  //   md: 2,
+  //   sm: 1,
+  // };
 
   const options = {
-    type: "loop", // Use "loop" type for infinite looping
+    type: 'loop', // Use "loop" type for infinite looping
     perPage: 1,
-    gap: "1rem",
+    gap: '1rem',
     rewind: true, // Enable rewind to loop infinitely
     pagination: true,
     arrows: {
@@ -70,60 +72,60 @@ function Testimonial() {
     breakpoints: {
       640: {
         perPage: 1,
-        gap: "0.5rem",
+        gap: '0.5rem',
         autoplay: true,
         interval: 3000,
       },
       768: {
         perPage: 2,
-        gap: "1rem",
+        gap: '1rem',
         autoplay: true,
         interval: 3000,
       },
       1024: {
         perPage: 3,
-        gap: "1rem",
+        gap: '1rem',
         autoplay: true,
         interval: 3000,
       },
       1280: {
         perPage: 3,
-        gap: "1rem",
+        gap: '1rem',
         autoplay: true,
         interval: 3000,
       },
       1536: {
         perPage: 3,
-        gap: "1rem",
+        gap: '1rem',
         autoplay: true,
         interval: 3000,
       },
       1920: {
         perPage: 3,
-        gap: "1rem",
+        gap: '1rem',
         autoplay: true,
         interval: 3000,
       },
     },
-  };
+  }
 
   return (
-    <div className="bg-transparent  w-full">
-      <div className="w-full relative ">
-        <div className="w-full  ">
+    <div className='bg-transparent  w-full'>
+      <div className='w-full relative '>
+        <div className='w-full  '>
           <Splide
             options={options}
             onMoved={(splide: any) => setCurrentSlide(splide.index)}
           >
             {testimonials.map((testimonial) => (
               <SplideSlide key={testimonial.id}>
-                <div className="text-xl text-white text-left w-60">
+                <div className='text-xl text-white text-left w-60'>
                   "{testimonial.message}"
                 </div>
-                <div className="text-white text-2xl text-left mt-6">
+                <div className='text-white text-2xl text-left mt-6'>
                   {testimonial.name}
                 </div>
-                <div className="text-white text-2xl text-left">
+                <div className='text-white text-2xl text-left'>
                   {testimonial.title}
                 </div>
               </SplideSlide>
@@ -132,7 +134,7 @@ function Testimonial() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Testimonial;
