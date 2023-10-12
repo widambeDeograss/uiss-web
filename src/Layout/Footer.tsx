@@ -5,7 +5,6 @@ import call from "../assets/img/call 2.png";
 import loc from "../assets/img/pin 5.png";
 
 
-
 const currentYear = new Date().getFullYear();
 
 const Footer = () => {
