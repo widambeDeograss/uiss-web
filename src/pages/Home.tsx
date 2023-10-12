@@ -18,6 +18,7 @@ import carrier from "../assets/img/carrier.png";
 import joinuspic from "../assets/img/joinus.png";
 import jsoverlay from "../assets/img/btoverlay.png";
 import Testimonial from "../components/Testimonial";
+import {useNavigate} from "react-router-dom";
 
 const VALUES = [
   {
@@ -74,6 +75,9 @@ const EVENTS = [
 ];
 
 function Home() {
+  const navigate = useNavigate()
+
+
   return (
     <div>
       <div className="relative h-screen">
@@ -90,7 +94,7 @@ function Home() {
           />
         </div>
         <div className="absolute inset-0 flex flex-col justify-center items-center">
-          <div className="w-4/5 md:w-2/4 text-center">
+          <div className="w-4/5 md:w-2/4 text-center -mt-20 lg:-mt-10">
             <Typography
               variant="h1"
               color="white"
@@ -101,7 +105,7 @@ function Home() {
             <Typography
               variant="lead"
               color="white"
-              className="mb-12 opacity-80"
+              className="mb-8 opacity-80"
             >
               <img
                 className="h-24 w-24 lg:h-44 lg:w-44 object-cover object-center m-auto"
@@ -239,7 +243,7 @@ function Home() {
         <img
           src={joinuspic}
           alt="card-image"
-          className="h-full w-fit object-cover"
+          className="h-full w-fit lg:w-full object-cover "
         />
         </div>
         <div className="absolute inset-0 flex flex-col justify-center items-center">
@@ -253,9 +257,12 @@ function Home() {
           </Typography>
           <Typography
             variant="small"
-            className="text-center mb-10 font-bold text-2xl lg:text-5xl "
+            className="text-center mb-10 font-bold text-2xl lg:text-5xl hover:scale-105 transition-transform  cursor-pointer"
+            onClick={() => navigate("/register") }
           >
-            <div className="bg-[#00000080] p-5 rounded-full">Join Us</div>
+            <div className="bg-[#00000080] p-5 rounded-full "
+
+            >Join Us</div>
           </Typography>
         </div>
       </div>

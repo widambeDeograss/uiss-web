@@ -123,9 +123,10 @@ export function Header() {
             </div>
           )}
           <img
-            className="h-20 w-44 object-cover object-center lg:h-40 lg:w-72 "
+            className="h-20 w-44 object-cover object-center lg:h-40 lg:w-72 cursor-pointer "
             src={logo}
             alt="logo image"
+            onClick={() => navigate("/")}
           />
           {navState && (
             <div className="flex items-center gap-8 ">

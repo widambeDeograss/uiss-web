@@ -99,7 +99,7 @@ const Projects = () => {
         <img
           src={homeprj}
           alt="image 1"
-          className="h-[400px] w-full object-cover"
+          className="h-[400px] w-full "
         />
         <div className="absolute inset-0 -top-64 h-full w-full">
           <img src={projectOverlay} alt="image 1" className="h-full w-full " />
