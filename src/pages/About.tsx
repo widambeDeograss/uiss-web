@@ -109,8 +109,7 @@ const About = () => {
               color="white"
               className="  text-sm  md:text-ls lg:text-2xl  text-black  "
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 15
-            00s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              The digitalized world we lIve in offers some amazing tools to enable an online hackathon but thereis nothing like experience of working on a project the whole night together with other crazy people.
             </Typography>
           </div>
         </div>
