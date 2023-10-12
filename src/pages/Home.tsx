@@ -137,6 +137,8 @@ function Home() {
         >
           Our Partners
         </Typography>
+
+        <div className="flex justify-center">
         <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6  text-blue-gray-900">
           <Typography
             as="a"
@@ -174,16 +176,18 @@ function Home() {
             <img src={oppo} alt="card-image" className=" object-cover" />
           </Typography>
         </div>
+        </div>
       </div>
 
-      <div className="mt-24">
+      <div className="mt-24 ">
         <Typography
           variant="small"
           className="flex justify-center mb-10 font-bold text-4xl text-white"
         >
           OUR CORE VALUES
         </Typography>
-        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:justify-center sm:flex-col">
+        <div className="flex justify-center">
+        <div className="grid grid-cols-1 mt-10 mx-auto  gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
           {VALUES.map((item) => {
             return (
               <CoreValuesCard
@@ -195,36 +199,38 @@ function Home() {
             );
           })}
         </div>
+        </div>
       </div>
 
-      <div className="mt-24">
+      <div className="mt-24 mx-auto">
         <Typography
           variant="small"
-          className="flex justify-center mb-10 font-bold  text-4xl text-white"
+          className=" mb-10 font-bold  text-4xl text-white"
         >
           Events
         </Typography>
         <Typography
           variant="small"
-          className="flex justify-center mb-10 font-bold  text-xl text-[#FABD13]"
+          className=" mb-10 font-bold  text-xl text-[#FABD13]"
         >
           We aspire Creativity and innovative spirits among the university
           students
         </Typography>
-        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:justify-center sm:flex-col">
-          {EVENTS.map((item) => {
-            return (
-              <EventCard
-                description={item.description}
-                image={item.image}
-                title={item.title}
-                id={item.id}
-                location={item.location}
-                date={item.date}
-              />
-            );
-          })}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 mt-10 gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+            {EVENTS.map((item) => (
+                <EventCard
+                    description={item.description}
+                    image={item.image}
+                    title={item.title}
+                    id={item.id}
+                    location={item.location}
+                    date={item.date}
+                />
+            ))}
+          </div>
         </div>
+
       </div>
 
       <div className="relative mt-20 h-full w-full">

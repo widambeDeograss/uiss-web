@@ -6,12 +6,14 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import logo from "../assets/img/UISS LOGO_VR 1.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,  useLocation } from "react-router-dom";
 
 export function Header() {
   const [openNav, setOpenNav] = React.useState(false);
-  const [navState, setnavState] = React.useState(true);
+  const [navState, setnavState] = React.useState(window.innerWidth >= 960);
   const navigate = useNavigate()
+    const { pathname } = useLocation();
+    const page = pathname.replace("/", "");
 
   React.useEffect(() => {
     window.addEventListener(
@@ -37,6 +39,7 @@ export function Header() {
         variant="small"
         color="blue-gray"
         className="p-1 font-normal text-lg hover:bg-yellow-100 "
+        onClick={() =>  navigate("/")}
       >
         <a href="#" className="flex items-center text-white">
           HOME
@@ -90,8 +93,14 @@ export function Header() {
                 variant="small"
                 color="blue-gray"
                 className="p-1 font-normal text-2xl"
+                onClick={() =>  navigate("/")}
+
               >
-                <a href="#" className="flex items-center  text-[#FABD13]">
+                <a href="#" className="flex items-center  "
+                   style={{
+                       color: page === "" ? "#FABD13" : "",
+                   }}
+                >
                   HOME
                 </a>
               </Typography>
@@ -99,10 +108,15 @@ export function Header() {
                 as="li"
                 variant="small"
                 color="blue-gray"
-                className="p-1 font-normal  text-2xl"
+                className="p-1 font-normal  t"
                 onClick={() =>  navigate("/about")}
+
               >
-                <a href="#" className="flex items-center text-white">
+                <a href="#" className="flex items-center text-white text-2xl"
+                   style={{
+                       color: page === "about" ? "#FABD13" : "",
+                   }}
+                >
                   ABOUT
                 </a>
               </Typography>
@@ -121,8 +135,13 @@ export function Header() {
                 color="blue-gray"
                 className="p-1 font-normal"
                 onClick={() =>  navigate("/events")}
+
               >
-                <a href="#" className="flex items-center text-white  text-2xl">
+                <a href="#" className="flex items-center text-white  text-2xl"
+                   style={{
+                       color: page === "events" ? "#FABD13" : "",
+                   }}
+                >
                   EVENTS
                 </a>
               </Typography>
@@ -132,8 +151,13 @@ export function Header() {
                 color="blue-gray"
                 className="p-1 font-normal"
                 onClick={() =>  navigate("/projects")}
+
               >
-                <a href="#" className="flex items-center text-white  text-2xl">
+                <a href="#" className="flex items-center text-white  text-2xl"
+                   style={{
+                       color: page === "projects" ? "#FABD13" : "",
+                   }}
+                >
                   PROJECTS
                 </a>
               </Typography>

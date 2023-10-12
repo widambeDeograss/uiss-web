@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import right from "../assets/img/right 2.png";
-import left from "../assets/img/right 3.png";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -51,13 +49,13 @@ const testimonials: TestimonialItem[] = [
 
 
   function Testimonial() {
-   const [slidePerpage, setslidePerpage] = useState(3);
+   const [slidePerpage, setslidePerpage] = useState(window.innerWidth >= 860?3:1);
 
    useEffect(() => {
     window.addEventListener("resize", () => {
-      if (window.innerWidth >= 960) {
+      if (window.innerWidth >= 861) {
         setslidePerpage(3);
-      } else if (window.innerWidth <= 960) {
+      } else if (window.innerWidth <= 860) {
         setslidePerpage(1);
       }
     });

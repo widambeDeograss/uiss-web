@@ -1,6 +1,6 @@
 import homeevent from "../assets/img/eventshm.png";
 import projectOverlay from "../assets/img/projectoverlay.png";
-import { Input, Typography } from "@material-tailwind/react";
+import {Button, Input, Typography} from "@material-tailwind/react";
 import React, {useState} from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import eventImage from "../assets/img/evntImage.png";
@@ -34,7 +34,7 @@ const images = [
     id: 6,
     img: img,
   },
- 
+
 ];
 
 const EVENTS = [
@@ -134,7 +134,7 @@ const Events = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#C89300]  px-20 py-10 -mt-72 -z-10   w-full">
+      <div className="bg-[#C89300]  px-2 lg:px-20 py-10 -mt-72 -z-10   w-full">
         <div className=" ">
           <Typography
             variant="small"
@@ -153,19 +153,22 @@ const Events = () => {
           </Typography>
         </div>
         <div>
-          <div className="flex justify-between">
-            <div className="bg-black h-8 p-2">
+          <div className="flex justify-between px-1 lg:px-10">
+            <div className="bg-black h-10 p-2">
               <Typography
                 variant="small"
-                className=" mb-10 font-bold  text-white "
+                className="  font-bold  text-white "
               >
                 All Events
               </Typography>
             </div>
-            <div className="w-72  ">
+            <div className="w-64  ">
               <Input
+                  color="white"
                 label="Search.."
-                className="bg-black"
+
+                  style={{backgroundColor:"black"}}
+                className="rounded-3xl border-0 border-t-black"
                 icon={
                   <div className="flex items-center gap-2">
                     {React.createElement(MagnifyingGlassIcon, {
@@ -199,7 +202,7 @@ const Events = () => {
           >
             OUR GALLERY
           </Typography>
-          <div className="mx-auto h-2 w-20 -mt-10  bg-black"></div>
+          <div className="mx-auto h-2 w-20 -mt-5  bg-black"></div>
           <Typography
             variant="small"
             className="flex justify-center mt-10 font-bold  text-base text-white"
@@ -208,7 +211,7 @@ const Events = () => {
             making memories in life
           </Typography>
 
-          <div className="grid grid-cols-1 gap-2 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-4/5 mx-auto mt-10">
+          <div className="grid grid-cols-1 gap-2 mx-auto lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-4/5 mt-10">
             {images.map((item) => {
               return (
                 <div
@@ -228,6 +231,37 @@ const Events = () => {
               );
             })}
           </div>
+        </div>
+        <div className=" ">
+          <Typography
+              variant="small"
+              className=" mb-10 font-bold text-4xl text-black uppercase mt-20"
+          >
+            EVENT SPONSOR
+          </Typography>
+          <div className="mx-auto h-2 w-20 -mt-6  bg-black"></div>
+         <div className="">
+           <Typography
+               variant="small"
+               className="flex justify-center mt-10 font-bold  text-sm text-white"
+           >
+             GLorem Ipsum is simply dummy text of the printing and typesetting industry.
+             <br/>
+             Lorem Ipsumhas been the industry's standard dummy text ever since the 1500
+           </Typography>
+
+
+        <div className="flex-wrap">
+          <input
+              type="email"
+              name="email"
+              id="emailid"
+              placeholder="Enter your Email"
+              className="bg-transparent w-2/5  p-2 border-t-0  border-r-0 border-l-0 border-b-2"
+          />
+          <Button className="rounded-3xl">Contact us</Button>
+        </div>
+         </div>
         </div>
       </div>
      {selectedImage && (

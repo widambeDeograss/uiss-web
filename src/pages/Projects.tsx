@@ -125,11 +125,11 @@ const Projects = () => {
         </div>
         {/* <div className="relative flex justify-center">
           <div className="absolute inset-0  mx-auto w-full md:w-[600px] lg:w-[1000px] flex justify-center">
-          
+
           </div>
         </div> */}
       </div>
-      <div className="bg-[#C89300]  px-20 py-10 -mt-72 -z-10   w-full">
+      <div className="bg-[#C89300]  px-2 lg:px-20 py-10 -mt-72 -z-10   w-full">
         <div className=" ">
           <Typography
             variant="small"
@@ -147,51 +147,53 @@ const Projects = () => {
             industry.
           </Typography>
           <div className="mt-10">
-            <Tabs value="html">
-               <div className="flex justify-between">
-               <TabsHeader className="w-96" > 
-                {data.map(({ label, value }) => (
-                  <Tab key={value} value={value} activeClassName="" className="">
-                    {label}
-                  </Tab>
-                ))}
-              </TabsHeader>
-              <div className="w-72  ">
-              <Input
-                label="Search.."
-                icon={ <div className="flex items-center gap-2">
-                {React.createElement(MagnifyingGlassIcon, { className: "w-5 h-5" })}
-                
-              </div>}
-                crossOrigin={undefined}
-              />
-            </div>
-               </div>
+            <Tabs value="all">
+              <div className="flex justify-between px-1 lg:px-10">
+                <TabsHeader className="w-96">
+                  {data.map(({ label, value }) => (
+                      <Tab key={value} value={value} activeClassName="" className="">
+                        {label}
+                      </Tab>
+                  ))}
+                </TabsHeader>
+                <div className="w-64">
+                  <Input
+                      label="Search.."
+                      style={{ backgroundColor: 'black' }}
+                      className="rounded-3xl border-0"
+                      icon={
+                        <div className="flex items-center gap-2">
+                          {React.createElement(MagnifyingGlassIcon, { className: "w-5 h-5" })}
+                        </div>
+                      }
+                      crossOrigin={undefined}
+                  />
+                </div>
+              </div>
               <TabsBody>
                 {data.map(({ value, desc }) => (
-                  value === "all"?<TabPanel  value={value} >
-                    <div className="flex flex-wrap items-center justify-center gap-10 lg:flex-row lg:justify-center md:flex-wrap sm:flex-col">
-              {EVENTS.map((item) => {
-                return (
-                  <ProjectCard
-                    description={item.description}
-                    image={item.image}
-                    title={item.title}
-                    id={item.id}
-                  />
-                );
-              })}
-            </div>
-                </TabPanel>: 
-                <TabPanel value={value}>
-                 {desc}
-                </TabPanel>
+                    value === "all" ? (
+                        <TabPanel value={value}>
+                          <div className="grid grid-cols-1 mt-10 items-center justify-center gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
+                            {EVENTS.map((item) => (
+                                <ProjectCard
+                                    description={item.description}
+                                    image={item.image}
+                                    title={item.title}
+                                    id={item.id}
+                                />
+                            ))}
+                          </div>
+                        </TabPanel>
+                    ) : (
+                        <TabPanel value={value}>{desc}</TabPanel>
+                    )
                 ))}
               </TabsBody>
             </Tabs>
-           
           </div>
-         
+
+
         </div>
       </div>
     </div>

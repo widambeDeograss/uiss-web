@@ -4,12 +4,7 @@ import mail from "../assets/img/mail (1) 2.png";
 import call from "../assets/img/call 2.png";
 import loc from "../assets/img/pin 5.png";
 
-const SITEMAP = [
-  {
-    title: "Company",
-    links: ["About Us", "Careers", "Our Team", "Projects"],
-  },
-];
+
 
 const currentYear = new Date().getFullYear();
 
@@ -36,7 +31,7 @@ const Footer = () => {
               placeholder="Enter your Email"
               className="bg-transparent flex justify-start font-roboto p-2 border-t-0  border-r-0 border-l-0 border-b-2"
             />
-            <Button className="bg-[#C89300] flex justify-start mt-4 text-base text-black rounded-lg font-roboto">
+            <Button className="bg-[#C89300] flex justify-start mt-4 text-base text-black rounded-3xl ">
               Contact Us
             </Button>
           </div>
