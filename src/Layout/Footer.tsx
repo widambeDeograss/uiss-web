@@ -4,12 +4,12 @@ import mail from "../assets/img/mail (1) 2.png";
 import call from "../assets/img/call 2.png";
 import loc from "../assets/img/pin 5.png";
 
-const SITEMAP = [
-  {
-    title: "Company",
-    links: ["About Us", "Careers", "Our Team", "Projects"],
-  },
-];
+// const SITEMAP = [
+//   {
+//     title: "Company",
+//     links: ["About Us", "Careers", "Our Team", "Projects"],
+//   },
+// ];
 
 const currentYear = new Date().getFullYear();
 
