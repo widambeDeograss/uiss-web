@@ -104,7 +104,7 @@ function Home() {
               className="mb-12 opacity-80"
             >
               <img
-                className="h-24 w-24 lg:h-52 lg:w-52 object-cover object-center m-auto"
+                className="h-24 w-24 lg:h-44 lg:w-44 object-cover object-center m-auto"
                 src={udsmlg}
                 alt="logo image"
               />
@@ -186,8 +186,8 @@ function Home() {
         >
           OUR CORE VALUES
         </Typography>
-        <div className="flex justify-center">
-        <div className="grid grid-cols-1 mt-10 mx-auto  gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
+        <div className="flex justify-center  ">
+        <div className="grid grid-cols-1 mt-10  gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
           {VALUES.map((item) => {
             return (
               <CoreValuesCard
@@ -216,7 +216,7 @@ function Home() {
           We aspire Creativity and innovative spirits among the university
           students
         </Typography>
-        <div className="flex justify-center">
+        <div className="flex justify-center px-2 ">
           <div className="grid grid-cols-1 mt-10 gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {EVENTS.map((item) => (
                 <EventCard

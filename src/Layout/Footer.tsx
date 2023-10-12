@@ -13,27 +13,29 @@ const Footer = () => {
     <footer className="relative w-full font-roboto">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3 ">
-          <div className="w-full">
-            <Typography
-              variant="small"
-              className="flex justify-start mb-4 font-bold uppercase text-2xl text-[#C89300]"
-            >
-              STAY CONNECTED WITH US
-            </Typography>
-            <label htmlFor="emailid" className="flex justify-start font-roboto">
-              Email
-            </label>
+          <div className="w-full flex justify-center">
+            <div>
+              <Typography
+                  variant="small"
+                  className="flex justify-start mb-4 font-bold uppercase text-2xl text-[#C89300]"
+              >
+                STAY CONNECTED WITH US
+              </Typography>
+              <label htmlFor="emailid" className="flex justify-start  font-roboto">
+                Email
+              </label>
 
-            <input
-              type="email"
-              name="email"
-              id="emailid"
-              placeholder="Enter your Email"
-              className="bg-transparent flex justify-start font-roboto p-2 border-t-0  border-r-0 border-l-0 border-b-2"
-            />
-            <Button className="bg-[#C89300] flex justify-start mt-4 text-base text-black rounded-3xl ">
-              Contact Us
-            </Button>
+              <input
+                  type="email"
+                  name="email"
+                  id="emailid"
+                  placeholder="Enter your Email"
+                  className="bg-transparent flex justify-start font-roboto p-2 border-t-0  border-r-0 border-l-0 border-b-2"
+              />
+              <Button className="bg-[#C89300] flex justify-start mt-4 text-base text-black rounded-3xl ">
+                Contact Us
+              </Button>
+            </div>
           </div>
           <div className=" m-auto">
             <img
