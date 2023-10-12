@@ -33,14 +33,14 @@ body {
 
 }
 
+/* 
 
-/* Media query for dark mode */
 @media (prefers-color-scheme: light) {
   body {
-    background-color: #ffffff; /* Dark mode background color */
-    color: #333333; /* Dark mode text color */
+    background-color: #ffffff; 
+    color: #333333; 
   }
-}
+} */
 
 /* button {
   border-radius: 8px;

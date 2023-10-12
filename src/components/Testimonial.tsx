@@ -6,6 +6,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 // @ts-ignore
 import { Swiper, SwiperSlide } from "swiper/react";
 
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -50,14 +51,16 @@ const testimonials: TestimonialItem[] = [
   // Add more testimonials as needed
 ];
 
-function Testimonial() {
-  const [slidePerpage, setslidePerpage] = useState(3);
 
-  useEffect(() => {
+  function Testimonial() {
+   const [slidePerpage, setslidePerpage] = useState(window.innerWidth >= 860?3:1);
+
+   useEffect(() => {
+
     window.addEventListener("resize", () => {
-      if (window.innerWidth >= 960) {
+      if (window.innerWidth >= 861) {
         setslidePerpage(3);
-      } else if (window.innerWidth <= 960) {
+      } else if (window.innerWidth <= 860) {
         setslidePerpage(1);
       }
     });

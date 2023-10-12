@@ -1,6 +1,5 @@
 import heroimg from "../assets/img/johannes-plenio-fmTde1Fe23A-unsplash 1.png";
-import overlay from "../assets/img/rgst_ovelay.png";
-import rgtextoverlay from "../assets/img/heroovelayrg.png";
+import overlay from "../assets/img/projectoverlay.png";
 import aboutimg from "../assets/img/aboutimg.png";
 import { Typography } from "@material-tailwind/react";
 import visionimg from "../assets/img/vision.png";
@@ -59,17 +58,17 @@ const About = () => {
         <img
           src={heroimg}
           alt="image 1"
-          className="h-full w-full object-cover"
+          className="h-[400px] w-full "
         />
-        <div className="absolute inset-0 -top-44 h-full w-full">
+        <div className="absolute inset-0 -top-64 h-full w-full">
           <img
             src={overlay}
             alt="image 1"
-            className="h-full w-full object-cover"
+            className="h-full  w-full "
           />
         </div>
         <div className="absolute inset-0 flex flex-col justify-center items-center">
-          <div className="w-4/5 md:w-2/4 text-center -mt-64">
+          <div className="w-4/5 md:w-2/4 text-center -mt-[400px]">
             <Typography
               variant="h1"
               color="white"
@@ -77,29 +76,22 @@ const About = () => {
             >
               About us
             </Typography>
-          </div>
-        </div>
-        <div className="relative -mt-48 flex justify-center">
-          <img
-            src={rgtextoverlay}
-            alt="image 1"
-            className="h-48 w-full object-cover"
-          />
-          <div className="absolute inset-0 -mt-[110px] mx-auto w-full md:w-[600px] lg:w-[1000px] flex justify-center">
             <Typography
               variant="h1"
               color="white"
-              className="  text-sm px-10 md:text-ls lg:text-xl   "
+              className="mt-10  text-sm px-10 md:text-ls lg:text-xl   "
             >
               We aspire Creativity and Innovative Spirits among the University
               students
             </Typography>
           </div>
         </div>
+
       </div>
 
-      <div className="bg-[#C89300] px-20 py-10  w-full">
-        <div className="flex flex-col  mt-10  justify-center gap-16 sm:flex-col lg:flex-row md:flex-row">
+      <div className="bg-[#C89300] -mt-72   py-10 -mt- -z-10   w-full">
+        <div className="flex justify-center">
+        <div className="flex flex-col  mt-10  justify-center sm:justify-center gap-16 sm:flex-col lg:flex-row md:flex-row">
           <div className=" w-72 h-72 lg:w-96 lg:h-96 md:h-80 md:w-80 sm:h-64 sm:w-64 relative  shadow-md ">
             <div className="absolute -top-10 -left-10 border-b-0  bg-black  border-solid  w-full h-full"></div>
             <div className="relative z-10 text-black bg-white  w-full h-full  hover:scale-105 transition-transform duration-300  ">
@@ -122,10 +114,10 @@ const About = () => {
             </Typography>
           </div>
         </div>
-
-        <div className="mt-20 bg-transparent">
-
-        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:justify-center sm:flex-col ">
+        </div>
+        <div className="mt-20">
+        <div className="flex justify-center">
+        <div className="grid grid-cols-1 mt-10  gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
           {VALUES.map((item) => {
             return (
               <AboutVisionCard
@@ -137,6 +129,7 @@ const About = () => {
             );
           })}
         </div>
+        </div>
       </div>
 
         <div className="mt-24">
@@ -146,6 +139,7 @@ const About = () => {
           >
             SPECIALIZATION
           </Typography>
+          <div className="flex justify-center">
           <div className="flex flex-col items-center justify-center gap-14 lg:flex-row lg:justify-center sm:flex-col  md:flex-row">
             {Specialization.map((item) => {
               return (
@@ -157,6 +151,7 @@ const About = () => {
                   />
               );
             })}
+          </div>
           </div>
         </div>
       </div>
