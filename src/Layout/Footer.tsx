@@ -31,7 +31,7 @@ const Footer = () => {
                   placeholder="Enter your Email"
                   className="bg-transparent flex justify-start font-roboto p-2 border-t-0  border-r-0 border-l-0 border-b-2"
               />
-              <Button className="bg-[#C89300] flex justify-start mt-4 text-base text-black rounded-3xl ">
+              <Button className="bg-[#C89300] flex justify-start mt-4 text-base text-black rounded-3xl hover:scale-105 transition-transform   ">
                 Contact Us
               </Button>
             </div>
