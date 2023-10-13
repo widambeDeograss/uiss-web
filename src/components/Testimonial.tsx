@@ -6,7 +6,6 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 // @ts-ignore
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -32,14 +31,14 @@ const testimonials: TestimonialItem[] = [
     name: "~Dr Baraka Maiseli",
     title: " HEAD OF DEPARTMENT,ETE",
     message:
-      " UISS has generated competent students capable of delivering ICT solutions to address practical socio-economic challenges that grab national attention.",
+      "UISS has generated competent students capable of delivering ICT solutions to address practical socio-economic challenges that grab national attention.",
   },
   {
     id: 3,
     name: "~Ms Angela Mwemezi ",
     title: " KPMG",
     message:
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+      "It was my immense fortune to be a part of UISS, huge respect and love to the leaders and society members for their devotion in creating an impact in the ICT space especially at the University. But above all, the society advisor, Dr. Baraka Maiseli, he is an inspiration and great mentor.",
   },
   {
     id: 4,
@@ -51,12 +50,12 @@ const testimonials: TestimonialItem[] = [
   // Add more testimonials as needed
 ];
 
+function Testimonial() {
+  const [slidePerpage, setslidePerpage] = useState(
+    window.innerWidth >= 860 ? 3 : 1
+  );
 
-  function Testimonial() {
-   const [slidePerpage, setslidePerpage] = useState(window.innerWidth >= 860?3:1);
-
-   useEffect(() => {
-
+  useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 861) {
         setslidePerpage(3);
@@ -81,7 +80,7 @@ const testimonials: TestimonialItem[] = [
       {testimonials.map((testimonial) => (
         <SwiperSlide key={testimonial.id} className="flex justify-center p-10">
           <div className="">
-            <div className="text-xl text-white text-left w-64">
+            <div className="text-xl text-white text-left w-64 text-justify">
               "{testimonial.message}"
             </div>
             <div className="text-white text-2xl text-left mt-6">
