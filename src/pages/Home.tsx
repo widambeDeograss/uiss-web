@@ -26,21 +26,21 @@ const VALUES = [
     title: "Creativity",
     image: valuesImages,
     description:
-      "Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+      "Members of the Society believe in using imaginations and original ideas to create outstanding products.",
   },
   {
     id: 2,
     title: "Innovation",
     image: valuesImages,
     description:
-      "Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+      "Our belief is that new ways of using technology can help to address common practical problems.",
   },
   {
     id: 3,
     title: "Integrity",
     image: valuesImages,
     description:
-      "Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+      "We believe that integrity promotes strong inter-relationship and trust among ourselves and with collaborating partners.",
   },
 ];
 

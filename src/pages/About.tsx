@@ -16,21 +16,21 @@ const VALUES = [
       title: "Our Vision",
       image: visionimg,
       description:
-        "Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "To become a leading International Society that exploits fully the intellectual wealth of ICT students to promote inclusive and sustainablenational development.",
     },
     {
       id: 2,
       title: "Our Mission",
       image: goalimg,
       description:
-        "Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "To empower innovative and creative young students to promote human socio-economic development through application of affordable and effective ICTs.",
     },
     {
       id: 3,
       title: "Our Motto",
       image: goalimg,
       description:
-        "Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "Aspire Creativity and Innovation for Human.",
     },
   ];
 
@@ -109,8 +109,7 @@ const About = () => {
               color="white"
               className="  text-sm  md:text-ls lg:text-2xl  text-black  "
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 15
-            00s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              The digitalized world we lIve in offers some amazing tools to enable an online hackathon but thereis nothing like experience of working on a project the whole night together with other crazy people.
             </Typography>
           </div>
         </div>
