@@ -78,19 +78,20 @@ function Testimonial() {
       onSlideChange={() => console.log("slide change")}
     >
       {testimonials.map((testimonial) => (
-        <SwiperSlide key={testimonial.id} className="flex justify-center p-10">
-          <div className="">
-            <div className="text-xl text-white text-left w-64 text-justify">
-              "{testimonial.message}"
+          <SwiperSlide key={testimonial.id} className="flex justify-center px-4 lg:px-14">
+            <div className="">
+              <div className="text-lg lg:text-xl text-white  sm:w-64 lg:w-auto text-justify">
+                "{testimonial.message}"
+              </div>
+              <div className="text-white text-xl lg:text-2xl text-left mt-4 lg:mt-6">
+                {testimonial.name}
+              </div>
+              <div className="text-white text-xl lg:text-2xl text-left">
+                {testimonial.title}
+              </div>
             </div>
-            <div className="text-white text-2xl text-left mt-6">
-              {testimonial.name}
-            </div>
-            <div className="text-white text-2xl text-left">
-              {testimonial.title}
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+
       ))}
     </Swiper>
   );

@@ -9,7 +9,7 @@ const Registration = () => {
         <img
           src={rghero}
           alt="image 1"
-          className="h-[400px] w-full"
+          className="h-[400px] w-full object-right-top"
         />
         <div className="absolute inset-0 -top-64 h-full w-full">
           <img
@@ -113,7 +113,7 @@ const Registration = () => {
               name="department"
               value="ete"
               label={
-                <Typography color="blue-gray" className="font-medium flex text-[8px] lg:text-lg">
+                <Typography color="blue-gray" className="font-medium flex text-[10px] lg:text-lg">
                   Department of Electronics and Telecommunications Engineering
                 </Typography>
               }

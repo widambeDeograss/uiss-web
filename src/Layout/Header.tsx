@@ -39,7 +39,10 @@ export function Header() {
         variant="small"
         color="blue-gray"
         className="p-1 font-normal text-lg hover:bg-yellow-100 "
-        onClick={() =>  navigate("/")}
+        onClick={() => {
+            navigate("/")
+           setOpenNav(!openNav)
+        }}
       >
         <a href="#" className="flex items-center text-white">
           HOME
@@ -51,7 +54,10 @@ export function Header() {
         color="blue-gray"
         className="p-1 font-normal text-lg hover:bg-yellow-100 "
 
-        onClick={() =>  navigate("/about")}
+        onClick={() => {
+            navigate("/about")
+            setOpenNav(!openNav)
+        }}
       >
         <a href="#" className="flex items-center text-white">
         ABOUT
@@ -62,7 +68,10 @@ export function Header() {
         variant="small"
         color="blue-gray"
         className="p-1 font-normal text-lg hover:bg-yellow-100 "
-        onClick={() =>  navigate("/projects")}
+        onClick={() => {
+            navigate("/projects")
+            setOpenNav(!openNav)
+        }}
       >
         <a href="#" className="flex items-center text-white">
           PROJECTS
@@ -73,7 +82,10 @@ export function Header() {
         variant="small"
         color="blue-gray"
         className="p-1 font-normal text-lg hover:bg-yellow-100 "
-        onClick={() =>  navigate("/events")}
+        onClick={() => {
+            navigate("/events")
+            setOpenNav(!openNav)
+        }}
       >
         <a href="#" className="flex items-center text-white">
           EVENTS

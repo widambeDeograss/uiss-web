@@ -99,7 +99,7 @@ const Projects = () => {
         <img
           src={homeprj}
           alt="image 1"
-          className="h-[400px] w-full "
+          className="h-[400px] w-full"
         />
         <div className="absolute inset-0 -top-64 h-full w-full">
           <img src={projectOverlay} alt="image 1" className="h-full w-full " />
@@ -148,8 +148,8 @@ const Projects = () => {
           </Typography>
           <div className="mt-10">
             <Tabs value="all">
-              <div className="flex justify-between px-1 lg:px-10">
-                <TabsHeader className="w-96">
+              <div className="flex flex-col-reverse justify-between lg:flex-row sm:flex-col-reverse gap-3 md:flex-row">
+                <TabsHeader className="">
                   {data.map(({ label, value }) => (
                       <Tab key={value} value={value} activeClassName="" className="">
                         {label}
