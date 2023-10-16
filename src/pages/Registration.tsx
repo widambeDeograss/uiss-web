@@ -397,7 +397,7 @@ const Registration = () => {
           </div>
 
 
-          <Button className="mt-10 rounded-lg text-[#C89300] p-5 w-32" type="submit" >Submit</Button>
+          <Button className="mt-10  text-[#C89300] p-5 w-32 rounded-3xl hover:scale-105 transition-transform " type="submit" >Submit</Button>
 
           </form>
 
