@@ -52,14 +52,14 @@ const testimonials: TestimonialItem[] = [
 
 function Testimonial() {
   const [slidePerpage, setslidePerpage] = useState(
-    window.innerWidth >= 860 ? 3 : 1
+    window.innerWidth >= 890 ? 3 : 1
   );
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      if (window.innerWidth >= 861) {
+      if (window.innerWidth >= 891) {
         setslidePerpage(3);
-      } else if (window.innerWidth <= 860) {
+      } else if (window.innerWidth <= 890) {
         setslidePerpage(1);
       }
     });
@@ -78,9 +78,9 @@ function Testimonial() {
       onSlideChange={() => console.log("slide change")}
     >
       {testimonials.map((testimonial) => (
-          <SwiperSlide key={testimonial.id} className="flex justify-center px-4 lg:px-14">
+          <SwiperSlide key={testimonial.id} className="flex justify-center px-12 pb-6 md:px-14 lg:px-14 sm:px-12">
             <div className="">
-              <div className="text-lg lg:text-xl text-white  sm:w-64 lg:w-auto text-justify">
+              <div className="text-base  md:text-2xl lg:text-xl text-white  sm:w-auto lg:w-auto md:w-auto text-justify">
                 "{testimonial.message}"
               </div>
               <div className="text-white text-xl lg:text-2xl text-left mt-4 lg:mt-6">
