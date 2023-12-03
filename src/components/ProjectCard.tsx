@@ -6,7 +6,7 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
-   
+
   type data = {
     id:number,
     title:String,
@@ -27,6 +27,7 @@ const ProjectCard = (data:data) => {
           <img
             src={data.image}
             alt="ui/ux review check"
+            className="max-h-52 w-full object-cover"
           />
         </CardHeader>
         <CardBody>
@@ -37,7 +38,7 @@ const ProjectCard = (data:data) => {
             Because it&apos;s about motivating the doers. Because I&apos;m here to
             follow my dreams and inspire others.
           </Typography>
-      
+
         </CardBody>
         <CardFooter className="pt-0">
         <Button className="bg-[#FABD13] text-black">View Project</Button>

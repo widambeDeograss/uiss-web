@@ -9,7 +9,7 @@ import overlay from "../assets/img/Rectangle 5.png";
 
 const WelcomeCard = () => {
     return (
-        <Card className="w-full h-auto max-w-[78rem] lg:flex-row md:flex-col sm:flex-col rounded-none p-4 lg:p-8">
+        <Card className="w-full h-auto max-w-[70rem] lg:flex-row md:flex-col sm:flex-col rounded-none p-4 lg:p-8">
             <CardHeader
                 shadow={false}
                 floated={true}
@@ -25,7 +25,7 @@ const WelcomeCard = () => {
                 <img
                     src={wlcmpic}
                     alt="card-image"
-                    className="h-[600px] md:h-[500px] sm:h-[300px] lg:h-full w-full lg:object-cover"
+                    className="h-[600px] md:h-[500px] sm:h-[300px] lg:h-full w-full object-cover"
                 />
             </CardHeader>
             <CardBody className="border-4 p-5 lg:p-10">

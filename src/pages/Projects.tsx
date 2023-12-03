@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import projectOverlay from "../assets/img/projectoverlay.png";
 import homeprj from "../assets/img/projecthome.png";
 import {
@@ -18,6 +18,8 @@ import {
     MagnifyingGlassIcon,
 
   } from "@heroicons/react/24/solid";
+import {ProjectManagement} from "../api/Api.ts";
+import {useDataFetch} from "../hoooks/DataHook.ts";
 
 const EVENTS = [
   {
@@ -92,14 +94,51 @@ const data = [
   },
 ];
 
+type ProjectType = {
+  category: string;
+  description: string;
+  id: number;
+  image: string;
+  people: string[];
+  title: string;
+};
+
 const Projects = () => {
+  const fetch = useDataFetch();
+  const [isLoading, setIsLoading] = useState(false)
+  const [topEvents, setTopEvents] = useState<[ProjectType]>()
+
+  const loadData = async () => {
+    setIsLoading(true);
+    try {
+      const  response = await fetch.fetchData({
+        url:ProjectManagement.project
+      })
+
+
+
+      console.log(response)
+
+      const topevn = response?.data.reverse()
+      setTopEvents(topevn?.slice(0,9))
+    }
+    catch (error){
+      console.log(error)
+    }
+
+  }
+
+  useEffect(() => {
+    loadData()
+  }, []);
+
   return (
     <div>
       <div className="relative h-screen">
         <img
           src={homeprj}
           alt="image 1"
-          className="h-[400px] w-full"
+          className="h-[350px] w-full"
         />
         <div className="absolute inset-0 -top-64 h-full w-full">
           <img src={projectOverlay} alt="image 1" className="h-full w-full " />
@@ -175,7 +214,7 @@ const Projects = () => {
                     value === "all" ? (
                         <TabPanel value={value}>
                           <div className="grid grid-cols-1 mt-10 items-center justify-center gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
-                            {EVENTS.map((item) => (
+                            {topEvents?.map((item) => (
                                 <ProjectCard
                                     description={item.description}
                                     image={item.image}

@@ -19,6 +19,9 @@ import joinuspic from "../assets/img/joinus.png";
 import jsoverlay from "../assets/img/btoverlay.png";
 import Testimonial from "../components/Testimonial";
 import {useNavigate} from "react-router-dom";
+import {EventManagement} from "../api/Api.ts";
+import {useDataFetch} from "../hoooks/DataHook.ts";
+import {useEffect, useState} from "react";
 
 const VALUES = [
   {
@@ -74,9 +77,47 @@ const EVENTS = [
   },
 ];
 
+const renderDateTime = (dateString:any) => {
+  const dateTime = new Date(dateString);
+  return dateTime.toLocaleDateString();
+};
+
+type EventType = {
+  description: string;
+  endDate: string;
+  hosts: string[];
+  id: number;
+  image: null | string;
+  name: string;
+  startDate: string;
+  venue: string;
+};
 function Home() {
   const navigate = useNavigate()
+  const fetch = useDataFetch();
+  const [isLoading, setIsLoading] = useState(false)
+  const [topEvents, setTopEvents] = useState<[EventType]>()
 
+  const loadData = async () => {
+    setIsLoading(true);
+    try {
+      const  response = await fetch.fetchData({
+        url:EventManagement.Events
+      })
+      console.log(response)
+      const topevn = response?.data.reverse()
+      setTopEvents(topevn?.slice(0,3))
+    }
+    catch (error){
+      console.log(error)
+    }
+
+  }
+
+  useEffect(() => {
+    loadData()
+  }, []);
+  console.log(topEvents)
 
   return (
     <div>
@@ -222,14 +263,14 @@ function Home() {
         </Typography>
         <div className="flex justify-center px-2 ">
           <div className="grid grid-cols-1 mt-10 gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-            {EVENTS.map((item) => (
+            {topEvents?.map((item) => (
                 <EventCard
-                    description={item.description}
-                    image={item.image}
-                    title={item.title}
-                    id={item.id}
-                    location={item.location}
-                    date={item.date}
+                    description={item?.description}
+                    image={item?.image}
+                    title={item?.name}
+                    id={item?.id}
+                    location={item?.venue}
+                    date={renderDateTime(item?.startDate)}
                 />
             ))}
           </div>

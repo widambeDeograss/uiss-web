@@ -52,7 +52,7 @@ const About = () => {
   return (
     <div>
       <div className="relative h-screen">
-        <img src={heroimg} alt="image 1" className="h-[400px] w-full " />
+        <img src={heroimg} alt="image 1" className="h-[344px] w-full " />
         <div className="absolute inset-0 -top-64 h-full w-full">
           <img src={overlay} alt="image 1" className="h-full  w-full " />
         </div>

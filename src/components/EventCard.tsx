@@ -6,7 +6,7 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
-   
+
   type data = {
     id:number,
     title:String,
@@ -28,6 +28,7 @@ import {
           <img
             src={data.image}
             alt="ui/ux review check"
+            className="max-h-52 w-full object-cover"
           />
         </CardHeader>
         <CardBody>

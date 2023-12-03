@@ -1,13 +1,17 @@
 import homeevent from "../assets/img/eventshm.png";
 import projectOverlay from "../assets/img/projectoverlay.png";
 import {Button, Input, Typography} from "@material-tailwind/react";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import eventImage from "../assets/img/evntImage.png";
 import carrier from "../assets/img/carrier.png";
 import stem from "../assets/img/stem.png";
 import { EventCard } from "../components/EventCard.tsx";
 import img from "../assets/img/aboutimg.png";
+import {EventManagement, Gallarey} from "../api/Api.ts";
+import {useDataFetch} from "../hoooks/DataHook.ts";
+
+
 
 const images = [
   {
@@ -94,9 +98,63 @@ const EVENTS = [
   },
 ];
 
+type EventType = {
+  description: string;
+  endDate: string;
+  hosts: string[];
+  id: number;
+  image: null | string;
+  name: string;
+  startDate: string;
+  venue: string;
+};
+
+type AlbumType = {
+  album: string;
+  album_id: number;
+  caption: string;
+  id: number;
+  url: string;
+  visibility: number;
+};
+const renderDateTime = (dateString:any) => {
+  const dateTime = new Date(dateString);
+  return dateTime.toLocaleDateString();
+};
 const Events = () => {
     const [selectedImage, setSelectedImage] = useState<any|null>(null);
+  const fetch = useDataFetch();
+  const [isLoading, setIsLoading] = useState(false)
+  const [topEvents, setTopEvents] = useState<[EventType]>()
+  const [images, setImages] = useState<[AlbumType]>()
 
+  const loadData = async () => {
+    setIsLoading(true);
+    try {
+      const  response = await fetch.fetchData({
+        url:EventManagement.Events
+      })
+
+      const  gar_response = await fetch.fetchData({
+        url:Gallarey.images
+      })
+
+      console.log(gar_response)
+
+      const topevn = response?.data.reverse()
+      setImages(gar_response?.data)
+      setTopEvents(topevn?.slice(0,9))
+    }
+    catch (error){
+      console.log(error)
+    }
+
+  }
+
+  useEffect(() => {
+    loadData()
+  }, []);
+  console.log(topEvents)
     const closeModal = () => {
         setSelectedImage(null);
       };
@@ -109,7 +167,7 @@ const Events = () => {
         <img
           src={homeevent}
           alt="image 1"
-          className="h-[400px] w-full "
+          className="h-[344px] w-full "
         />
         <div className="absolute inset-0 -top-64 h-full w-full">
           <img src={projectOverlay} alt="image 1" className="h-full w-full " />
@@ -182,15 +240,15 @@ const Events = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 mt-10 items-center justify-center gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
-          {EVENTS.map((item) => {
+          {topEvents?.map((item) => {
             return (
               <EventCard
                 description={item.description}
                 image={item.image}
-                title={item.title}
+                title={item.name}
                 id={item.id}
-                location={item.location}
-                date={item.date}
+                location={item?.venue}
+                date={renderDateTime(item?.startDate)}
               />
             );
           })}
@@ -212,15 +270,15 @@ const Events = () => {
           </Typography>
 
           <div className="grid grid-cols-1 gap-2 mx-auto lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-4/5 mt-10">
-            {images.map((item) => {
+            {images?.map((item) => {
               return (
                 <div
                   className="relative rounded-lg overflow-hidden h-64 w-64 shadow-md hover:shadow-xl transition-transform transform hover:scale-105"
                   key={item.id}
-                  onClick={() => setSelectedImage(item.img)}
+                  onClick={() => setSelectedImage(item.url)}
                 >
                   <img
-                    src={item.img}
+                    src={item?.url}
                     alt="card-image"
                     className="object-cover h-full w-full"
                   />
