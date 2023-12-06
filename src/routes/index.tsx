@@ -5,6 +5,8 @@ import Registration from '../pages/Registration';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Events from '../pages/Events';
+import Event from "../pages/Event.tsx";
+import Project from "../pages/Project.tsx";
 
 
 const AppRouter = () => {
@@ -21,6 +23,8 @@ const AppRouter = () => {
                 {path:"about", element:<About />},
                 {path:"projects", element:<Projects />},
                 {path:"events", element:<Events />},
+                { path: "events/:id", element: <Event /> },
+                { path: "projects/:id", element: <Project /> },
             ],
         }
     ]);

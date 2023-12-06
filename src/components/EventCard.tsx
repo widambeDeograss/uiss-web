@@ -6,6 +6,7 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
   type data = {
     id:number,
@@ -17,8 +18,17 @@ import {
 }
 
   export function EventCard(data:data) {
+    const navigate = useNavigate()
     return (
-      <Card className="max-w-[24rem] overflow-hidden bg-black border-[0.3px] transform hover:rotate-1 transition-transform duration-300" >
+      <Card className="max-w-[24rem] overflow-hidden bg-black border-[0.3px] transform hover:rotate-1 transition-transform duration-300" 
+      onClick={() => {
+        navigate(`/events/${data?.id}`, {
+          state: {
+            event: data?.id,
+          },
+        });
+      }}
+      >
         <CardHeader
           floated={false}
           shadow={false}

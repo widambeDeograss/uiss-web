@@ -1,6 +1,6 @@
 import homeevent from "../assets/img/eventshm.png";
 import projectOverlay from "../assets/img/projectoverlay.png";
-import {Button, Input, Typography} from "@material-tailwind/react";
+import {Button, Input, Spinner, Typography} from "@material-tailwind/react";
 import React, {useEffect, useState} from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import eventImage from "../assets/img/evntImage.png";
@@ -139,16 +139,19 @@ const Events = () => {
         url:Gallarey.images
       })
 
-      console.log(gar_response)
+      console.log(response)
 
       const topevn = response?.data.reverse()
       setImages(gar_response?.data)
       setTopEvents(topevn?.slice(0,9))
+      setIsLoading(false)
     }
     catch (error){
       console.log(error)
-    }
 
+      setIsLoading(false)
+    }
+    setIsLoading(false)
   }
 
   useEffect(() => {
@@ -239,20 +242,18 @@ const Events = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 mt-10 items-center justify-center gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
-          {topEvents?.map((item) => {
-            return (
-              <EventCard
-                description={item.description}
-                image={item.image}
-                title={item.name}
-                id={item.id}
-                location={item?.venue}
-                date={renderDateTime(item?.startDate)}
-              />
-            );
-          })}
-        </div>
+        {isLoading ? <div className="flex justify-center"> <Spinner className="h-8 w-8"/></div>:  <div className="grid grid-cols-1 mt-10 gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+            {topEvents?.map((item) => (
+                <EventCard
+                    description={item?.description}
+                    image={item?.image}
+                    title={item?.name}
+                    id={item?.id}
+                    location={item?.venue}
+                    date={renderDateTime(item?.startDate)}
+                />
+            ))}
+          </div>}
         <div className=" ">
           <Typography
             variant="small"

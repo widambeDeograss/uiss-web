@@ -9,6 +9,7 @@ import {
   Tab,
   TabPanel,
   Input,
+  Spinner,
 } from "@material-tailwind/react";
 import eventImage from "../assets/img/evntImage.png";
 import carrier from "../assets/img/carrier.png";
@@ -120,10 +121,12 @@ const Projects = () => {
       console.log(response)
 
       const topevn = response?.data.reverse()
-      setTopEvents(topevn?.slice(0,9))
+      setTopEvents(topevn?.slice(0,9));
+      setIsLoading(false);
     }
     catch (error){
-      console.log(error)
+      console.log(error);
+      setIsLoading(false);
     }
 
   }
@@ -213,16 +216,18 @@ const Projects = () => {
                 {data.map(({ value, desc }) => (
                     value === "all" ? (
                         <TabPanel value={value}>
+                         {isLoading? <div className="flex justify-center"> <Spinner className="h-8 w-8"/></div>: 
                           <div className="grid grid-cols-1 mt-10 items-center justify-center gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
-                            {topEvents?.map((item) => (
-                                <ProjectCard
-                                    description={item.description}
-                                    image={item.image}
-                                    title={item.title}
-                                    id={item.id}
-                                />
-                            ))}
-                          </div>
+                          {topEvents?.map((item) => (
+                              <ProjectCard
+                                  description={item.description}
+                                  image={item.image}
+                                  title={item.title}
+                                  id={item.id}
+                              />
+                          ))}
+                        </div>
+                         }
                         </TabPanel>
                     ) : (
                         <TabPanel value={value}>{desc}</TabPanel>

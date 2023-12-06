@@ -8,6 +8,7 @@ import AboutVisionCard from "../components/AboutVisionCard";
 import valuesImages from "../assets/img/computer 1.png";
 import code from "../assets/img/coding 2.png";
 import CoreValuesCard from "../components/CoreValuesCard.tsx";
+import student from "../assets/img/studentofweek.png";
 
 const VALUES = [
   {
@@ -125,7 +126,7 @@ const About = () => {
         <div className="mt-24">
           <Typography
             variant="small"
-            className="flex justify-center mb-10 font-bold text-4xl text-black"
+            className="flex justify-center mb-10 font-bold text-2xl lg:text-4xl text-black"
           >
             SPECIALIZATION
           </Typography>
@@ -141,6 +142,91 @@ const About = () => {
                   />
                 );
               })}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-24">
+          <Typography
+            variant="small"
+            className="flex justify-center mb-10 font-bold text-2xl lg:text-4xl text-black"
+          >
+            MEMBERS’ OF THE WEEK
+          </Typography>
+          <div className="flex justify-center">
+            <div className="flex flex-col  mt-10  justify-center sm:justify-center gap-16 sm:flex-col lg:flex-row md:flex-row">
+              <div className=" w-72 h-72 lg:w-96 lg:h-96 md:h-80 md:w-80 sm:h-64 sm:w-64 relative  shadow-md ">
+                <div className="absolute -top-3 -left-3 border-b-0  bg-white  border-solid  w-full h-full"></div>
+                <div className="relative z-10 text-black bg-white  w-full h-full  hover:scale-105 transition-transform duration-300  ">
+                  <img
+                    src={student}
+                    alt="card-image"
+                    className="h-full w-full object-cover"
+                  />
+                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white px-4 py-2 text-sm">
+                    Jane doe
+                  </div>
+
+                </div>
+              </div>
+
+              <div className="w-64 lg:w-96 md:w-72 sm:w-64">
+                <Typography
+                  variant="h1"
+                  color="white"
+                  className="  text-xs text-left  md:text-ls lg:text-2xl  text-black  "
+                >
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsumhas been the industry's
+                  standard dummy text ever since the 1500 Lorem Ipsum is simply
+                  dummy text of the printing and typesetting industry. Lorem
+                  Ipsumhas been the industry's standard dummy text ever since
+                  the 1500 Lorem Ipsum is simply dummy text of the printing and
+              
+                </Typography>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-24">
+          <Typography
+            variant="small"
+            className="flex justify-center mb-10 font-bold text-2xl lg:text-4xl text-black"
+          >
+            ALUMNI OF THE WEEK
+          </Typography>
+          <div className="flex justify-center">
+            <div className="flex flex-col  mt-10  justify-center sm:justify-center gap-16 sm:flex-col lg:flex-row md:flex-row">
+              <div className=" w-72 h-72 lg:w-96 lg:h-96 md:h-80 md:w-80 sm:h-64 sm:w-64 relative  shadow-md ">
+                <div className="absolute -top-3 -left-3 border-b-0  bg-white  border-solid  w-full h-full"></div>
+                <div className="relative z-10 text-black bg-white  w-full h-full  hover:scale-105 transition-transform duration-300  ">
+                  <img
+                    src={student}
+                    alt="card-image"
+                    className="h-full w-full object-cover"
+                  />
+                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white px-4 py-2 text-sm">
+                    Jane doe
+                  </div>
+
+                </div>
+              </div>
+
+              <div className="w-64 lg:w-96 md:w-72 sm:w-64">
+                <Typography
+                  variant="h1"
+                  color="white"
+                  className="  text-xs text-left  md:text-ls lg:text-2xl  text-black  "
+                >
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsumhas been the industry's
+                  standard dummy text ever since the 1500 Lorem Ipsum is simply
+                  dummy text of the printing and typesetting industry. Lorem
+                  Ipsumhas been the industry's standard dummy text ever since
+                  the 1500 Lorem Ipsum is simply dummy text of the printing and
+              
+                </Typography>
+              </div>
             </div>
           </div>
         </div>

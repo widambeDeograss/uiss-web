@@ -6,6 +6,7 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
   type data = {
     id:number,
@@ -15,6 +16,7 @@ import {
 }
 
 const ProjectCard = (data:data) => {
+  const navigate = useNavigate()
   return (
     <div>
       <Card className="max-w-[22rem] overflow-hidden bg-black border-[0.3px] transform hover:rotate-1 transition-transform duration-300" >
@@ -41,7 +43,15 @@ const ProjectCard = (data:data) => {
 
         </CardBody>
         <CardFooter className="pt-0">
-        <Button className="bg-[#FABD13] text-black">View Project</Button>
+        <Button className="bg-[#FABD13] text-black"
+           onClick={() => {
+            navigate(`/projects/${data?.id}`, {
+              state: {
+                event: data?.id,
+              },
+            });
+          }}
+        >View Project</Button>
       </CardFooter>
       </Card>
     </div>

@@ -1,4 +1,4 @@
-import { Typography } from "@material-tailwind/react";
+import { Typography, Spinner  } from "@material-tailwind/react";
 import udsmlg from "../assets/img/UDSM logo.png";
 import udsmHero from "../assets/img/WhatsApp Image 2023-03-13 at 11.27 1.png";
 import overlay from "../assets/img/Rectangle 42.png";
@@ -107,9 +107,11 @@ function Home() {
       console.log(response)
       const topevn = response?.data.reverse()
       setTopEvents(topevn?.slice(0,3))
+      setIsLoading(false)
     }
     catch (error){
       console.log(error)
+      setIsLoading(false)
     }
 
   }
@@ -165,15 +167,35 @@ function Home() {
           </div>
         </div>
       </div>
+      
       <div className="absolute  mt-6  h-[1000px] w-full">
         <img
           src={bgCRS}
           alt="card-image"
-          className="h-[1000px] w-full object-cover"
+          className="h-[1300px] w-full object-cover"
         />
       </div>
       <div className=" -mt-40 h-auto  w-full flex justify-center ">
         <WelcomeCard />
+      </div>
+      <div className="mx-auto flex justify-center mt-16">
+        <div className="bg-[#fabc133b] h-auto  w-4/5 p-4">
+          <div className="grid grid-cols-1 mt-10  gap-10 lg:grid-cols-3 lg:justify-center md:grid-cols-2 sm:grid-cols-1">
+
+            <div className="flex flex-col justify-center items-center">
+            <Typography className="text-[40px] font-extrabold text-white">123</Typography>
+            <Typography className="text-3xl font-bold text-[#FABD13]">Members</Typography>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+            <Typography className="text-[40px] font-extrabold text-white">123</Typography>
+            <Typography className="text-3xl font-bold text-[#FABD13]">Mentors</Typography>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+            <Typography className="text-[40px] font-extrabold text-white">123</Typography>
+            <Typography className="text-3xl font-bold text-[#FABD13]">Alumni</Typography>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="mt-20 px-5 lg:p-10">
         <Typography
@@ -262,7 +284,7 @@ function Home() {
           students
         </Typography>
         <div className="flex justify-center px-2 ">
-          <div className="grid grid-cols-1 mt-10 gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+          {isLoading ? <Spinner className="h-8 w-8"/>:  <div className="grid grid-cols-1 mt-10 gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {topEvents?.map((item) => (
                 <EventCard
                     description={item?.description}
@@ -273,7 +295,7 @@ function Home() {
                     date={renderDateTime(item?.startDate)}
                 />
             ))}
-          </div>
+          </div>}
         </div>
 
       </div>
